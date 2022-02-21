@@ -1,0 +1,28 @@
+.link,
+.link:hover,
+.link:visited
+{
+    width: 11rem;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.8rem 0;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s ease-out;
+}
+
+.link.active
+{
+    color: black;
+}
+
+@media screen and (min-width: 376px) {
+    .link,
+    .link:hover,
+    .link:visited
+    {
+        width: 14rem;
+    }
+}

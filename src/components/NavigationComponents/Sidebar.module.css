@@ -1,0 +1,80 @@
+.sidebar
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.616);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    height: calc(100vh - 5.5rem);
+    width: 0;
+    overflow-x: hidden;
+    transition: all ease-out 0.3s;
+}
+
+.sidebar.unfolded
+{
+    width: 11rem;
+}
+
+.sidebar.scrolled
+{
+    height: calc(100vh - 4.5rem);
+    background-color: rgba(0, 0, 0, 0.925);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+}
+
+.tagger
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10rem;
+    margin: 0.4rem 0.5rem 0 0.5rem;
+    background-color: rgb(255, 255, 255);
+    height: 2rem;
+    z-index: -1;
+    border-radius: 6px;
+    transition: all 0.3s ease-out;
+}
+
+.relativeContainer
+{
+    width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.unfolded .relativeContainer
+{
+    width: 100%;
+}
+
+@media screen and (min-width: 376px) {
+
+    .sidebar.unfolded
+    {
+        width: 14rem;
+    }
+
+    .tagger
+    {
+        width: 13rem;
+        margin: 0.4rem 0.5rem 0 0.5rem;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+    .sidebar
+    {
+        display: none;
+    }
+    
+    .tagger{
+        display: none;
+    }
+}
