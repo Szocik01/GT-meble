@@ -1,5 +1,6 @@
 import style from "./Backdrop.module.css";
 import { useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 export default function Backdrop(props)
 {
@@ -32,5 +33,5 @@ export default function Backdrop(props)
         }
     },[isUnfolded]);
 
-    return <div className={`${style.backdrop} ${ isMenu ? style.menu : ""}`} onClick={hideBackdrop} ref={backdropRef}></div>
+    return ReactDOM.createPortal(<div className={`${style.backdrop} ${ isMenu ? style.menu : ""}`} onClick={hideBackdrop} ref={backdropRef}></div>,document.getElementById("backdrop")); 
 }
