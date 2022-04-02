@@ -33,7 +33,7 @@ export default function Navbar(props) {
         onMouseLeave={onLeavePositionChangeHandler}>
         <div
           className={`${style.tagger} ${style[`position${positions.hoverPosition}`]}`}></div>
-        <Link to="main" onMouseEnter={hoverPositionChangeHandler.bind(null, 0)}>
+        <Link to="" onMouseEnter={hoverPositionChangeHandler.bind(null, 0)}>
           Strona główna
         </Link>
         <Link

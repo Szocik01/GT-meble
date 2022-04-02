@@ -1,0 +1,22 @@
+.container
+{
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width:769px)
+{
+    .container
+    {
+        padding: 1.2rem 1.6rem;
+    }
+}
+
+@media screen and (min-width:1025px)
+{
+    .container
+    {
+        padding: 1.8rem 2.2rem;
+    }
+}

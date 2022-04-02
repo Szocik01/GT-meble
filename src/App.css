@@ -15,14 +15,9 @@ body
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    padding-top: 5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
     overflow-y: auto;
-}
-
-.app
-{
-  height: 100%;
-  width: 100%;
 }
 
 body::-webkit-scrollbar {

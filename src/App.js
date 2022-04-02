@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import "./App.css";
 import Navigation from "./components/NavigationComponents/Navigation";
 import { useDispatch } from "react-redux";
@@ -27,17 +27,16 @@ function App() {
   },[dispatch]);
 
   return (
-    <div className="app">
+    <Fragment>
       <Navigation />
       <Routes>
-        <Route path="/main" element={<Main/>}/>
+        <Route path="/" element={<Main/>}/>
         <Route path="/products" element={<Products/>}/>
         <Route path="/prices" element={<Prices/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
-      <div style={{ height: "2000px" }}></div>
-    </div>
+     </Fragment>
   );
 }
 
