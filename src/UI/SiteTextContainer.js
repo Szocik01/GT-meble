@@ -10,7 +10,6 @@ export default function SiteTextContainer(props)
 
     useEffect(()=>{
         const observer=new IntersectionObserver((entries,observer)=>{
-            console.log(entries)
             if(isObserving)
             {
                 entries.forEach((entry) => {
@@ -18,7 +17,6 @@ export default function SiteTextContainer(props)
                     {
                         return;
                     }
-                    console.log(entry)
                     entry.target.classList.add(`${sectionStyles.show}`);
                     observer.unobserve(entry.target);
                 });

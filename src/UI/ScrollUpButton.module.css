@@ -1,0 +1,60 @@
+.button
+{
+    display: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 5px;
+    border: 1px gray solid;
+    background-color: rgb(248, 248, 248);
+    transition: opacity 0.3s ease, transform 0.1s ease;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 0.6rem 1.4rem 0;
+    cursor: pointer;
+}
+
+.button.display
+{
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.button.display.show
+{
+    opacity: 1;
+}
+
+.button.display.show:active
+{
+    transform: scale(0.95);
+    background-color: rgb(234, 234, 234);
+}
+
+.button img
+{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width:376px){
+    .button
+    {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 0.8rem 1.6rem 0;
+    }
+}
+
+@media screen and (min-width:1025px)
+{
+    .button
+    {
+        width: 3.4rem;
+        height: 3.4rem;
+        margin: 0 1rem 1.8rem 0;
+
+    }
+}

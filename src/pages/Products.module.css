@@ -1,0 +1,39 @@
+.header
+{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+
+@media screen and (min-width:426px) {
+    .header
+    {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width:551px)
+{
+    .header
+    {
+        margin-bottom: 1.3rem;
+    }
+
+}
+
+@media screen and (min-width:769px)
+{  
+    .header
+    {
+        font-size: 2.4rem;
+        margin-bottom: 1.4rem;
+    }
+}
+
+@media screen and (min-width:1025px)
+{
+    .header
+    {
+        margin-bottom: 1.5rem;
+    }
+}

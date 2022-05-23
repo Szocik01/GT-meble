@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Prices from "./pages/Prices";
 import { Routes, Route } from "react-router-dom";
+import ScrollUpButton from "./UI/ScrollUpButton";
+import Logo from "./UI/Logo";
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
   return (
     <Fragment>
       <Navigation />
+      <Logo/>
       <Routes>
         <Route path="/" element={<Main/>}/>
         <Route path="/products" element={<Products/>}/>
@@ -36,6 +39,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
+      <ScrollUpButton/>
      </Fragment>
   );
 }

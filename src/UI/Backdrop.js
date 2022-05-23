@@ -19,7 +19,7 @@ export default function Backdrop(props)
             backdropRef.current.classList.add(`${style.display}`);
             timer=setTimeout(()=>{
                 backdropRef.current.classList.add(`${style.visible}`);
-            },10);
+            },20);
         }
         else
         {

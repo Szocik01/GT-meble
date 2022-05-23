@@ -37,7 +37,7 @@ export default function Sidebar(props) {
     <nav className={`${style.sidebar} ${props.isUnfolded ? style.unfolded : ""} ${isScrolled ? style.scrolled : ""}`} ref={sidebarRef}>
       <div className={style.relativeContainer} onMouseLeave={onLeavePositionChangeHandler}>
         <div className={style.tagger} style={{top:`${marginValue.toFixed(2)}px`}}></div>
-        <SingleLink id={0} isActive={hoverPosition===0} hoverPositionChangeHandler={hoverPositionChangeHandler} to="main" linkName="Strona główna"/>
+        <SingleLink id={0} isActive={hoverPosition===0} hoverPositionChangeHandler={hoverPositionChangeHandler} to="" linkName="Strona główna"/>
         <SingleLink id={1} isActive={hoverPosition===1} hoverPositionChangeHandler={hoverPositionChangeHandler} to="products" linkName="Produkty"/>
         <SingleLink id={2} isActive={hoverPosition===2} hoverPositionChangeHandler={hoverPositionChangeHandler} to="prices" linkName="Cennik"/>
         <SingleLink id={3} isActive={hoverPosition===3} hoverPositionChangeHandler={hoverPositionChangeHandler} to="about" linkName="O firmie"/>

@@ -1,61 +1,111 @@
-.header
+.mainHeader,
+.text
+{
+    transition: transform 0.8s ease,opacity 0.7s 0.1s ease-out;
+    transform: translateX(-110%);
+    opacity: 0;
+}
+
+.mainHeader
 {
     font-size: 1.8rem;
     font-weight: 500;
-    transition: transform 0.8s ease-out;
-    transform: translateX(-120%);
 }
 
 .text
 {
-    margin-top: 0.6rem;
-    transition: transform 0.8s ease-out;
-    transform: translateX(-120%);
+    text-align: justify;
+    margin:1.2rem 0;
 }
 
 .show.text,
-.show.header
+.show.mainHeader
 {
     transform: translateX(0%);
+    opacity: 1;
 }
 
 @media screen and (min-width:551px)
 {
-    .header
+    .mainHeader,
+    .text
+    {
+        transition: transform 1s ease,opacity 0.7s 0.1s ease-out;
+    }
+
+    .mainHeader
     {
         font-size: 2rem;
     }
 
     .text
     {
-        margin-top: 0.8rem;
+        margin:1.3rem 0;
     }
 }
 
 @media screen and (min-width:769px)
-{
-    .header
+{  
+    .mainHeader,
+    .text
     {
-        font-size: 2.4rem;
+        transition: transform 1.2s ease,opacity 0.8s 0.1s ease-out;
+    }
+    
+    .mainHeader
+    {
+        font-size: 2.2rem;
     }
 
     .text
     {
-        margin-top: 1rem;
+        margin: 1.4rem 0;
         font-size: 1.2rem;
     }
 }
 
 @media screen and (min-width:1025px)
 {
-    .header
+    .mainHeader,
+    .text
+    {
+        transition: transform 1.5s ease,opacity 0.9s 0.1s ease-out;
+    }
+
+    .mainHeader
+    {
+        font-size: 2.6rem;
+    }
+
+    .text
+    {
+        margin: 1.5rem 0;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width:1201px)
+{
+    .mainHeader
     {
         font-size: 2.8rem;
     }
 
     .text
     {
-        margin-top: 1.5rem;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width:1501px)
+{
+    .mainHeader
+    {
+        font-size: 3rem;
+    }
+
+    .text
+    {
+        font-size: 1.5rem;
     }
 }

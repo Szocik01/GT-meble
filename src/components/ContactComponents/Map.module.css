@@ -1,0 +1,50 @@
+.spinnerContainer,
+.map
+{
+    width: 100%;
+    height: 200px;
+}
+
+.spinnerContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:426px) {
+    .spinnerContainer,
+    .map
+    {
+        width: 80%;
+        height: 300px;
+    }
+}
+
+@media screen and (min-width:769px) {
+    .spinnerContainer,
+    .map
+    {
+        width: 70%;
+        height: 400px;
+        grid-area: map;
+    }
+}
+
+@media screen and (min-width:1251px) {
+    .spinnerContainer,
+    .map
+    {
+        width: 60%;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width:1501px) {
+    .spinnerContainer,
+    .map
+    {
+        width: 50%;
+        height: 400px;
+    }
+}

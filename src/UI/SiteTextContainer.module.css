@@ -20,3 +20,11 @@
         padding: 1.8rem 2.2rem;
     }
 }
+
+@media screen and (min-width:1201px)
+{
+    .container
+    {
+        padding: 2rem 2.6rem;
+    }
+}
