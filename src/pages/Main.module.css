@@ -1,7 +1,8 @@
 .mainHeader,
-.text
+.text,
+.linkContainer
 {
-    transition: transform 0.8s ease,opacity 0.7s 0.1s ease-out;
+    transition: transform 0.8s ease,opacity 0.7s 0.1s ease-out, color 0.3s ease;
     transform: translateX(-110%);
     opacity: 0;
 }
@@ -18,19 +19,73 @@
     margin:1.2rem 0;
 }
 
+.linkContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.link
+{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: black;
+    width: fit-content;
+}
+
+.link img
+{
+    width: 2.1rem;
+    height: 2.1rem;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+} 
+
+.link:hover,
+.link:active
+{
+    color: rgb(101, 60, 3);
+}
+
+
+.link:hover img,
+.link:active img
+{
+    transform: translateX(0.4rem) rotate(90deg);
+}
+
 .show.text,
-.show.mainHeader
+.show.mainHeader,
+.show.linkContainer
 {
     transform: translateX(0%);
     opacity: 1;
 }
 
+@media screen and (min-width:426px)
+{
+    .link
+    {
+        font-size: 1.1rem;
+    }
+
+    .link img
+    {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
 @media screen and (min-width:551px)
 {
     .mainHeader,
-    .text
+    .text,
+    .linkContainer
     {
-        transition: transform 1s ease,opacity 0.7s 0.1s ease-out;
+        transition: transform 1s ease,opacity 0.7s 0.1s ease-out, color 0.3s ease;
     }
 
     .mainHeader
@@ -47,9 +102,10 @@
 @media screen and (min-width:769px)
 {  
     .mainHeader,
-    .text
+    .text,
+    .linkContainer
     {
-        transition: transform 1.2s ease,opacity 0.8s 0.1s ease-out;
+        transition: transform 1.2s ease,opacity 0.8s 0.1s ease-out,color 0.3s ease;
     }
     
     .mainHeader
@@ -67,9 +123,10 @@
 @media screen and (min-width:1025px)
 {
     .mainHeader,
-    .text
+    .text,
+    .linkContainer
     {
-        transition: transform 1.5s ease,opacity 0.9s 0.1s ease-out;
+        transition: transform 1.5s ease,opacity 0.9s 0.1s ease-out,color 0.3s ease;
     }
 
     .mainHeader
@@ -86,6 +143,11 @@
 
 @media screen and (min-width:1201px)
 {
+    .linkContainer
+    {
+        transition: transform 1.5s ease,opacity 0.9s 0.1s ease-out, color 0.5s ease;
+    }
+
     .mainHeader
     {
         font-size: 2.8rem;
@@ -94,6 +156,23 @@
     .text
     {
         font-size: 1.4rem;
+    }
+
+    .link
+    {
+        font-size: 1.2rem;
+    }
+
+    .link img
+    {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .link:hover img,
+    .link:active img
+    {
+        transform: translateX(0.6rem) rotate(90deg);
     }
 }
 

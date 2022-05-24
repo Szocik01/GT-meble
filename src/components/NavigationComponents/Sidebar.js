@@ -27,10 +27,7 @@ export default function Sidebar(props) {
   }
 
   useEffect(()=>{
-    if(sidebarRef)
-    {
-      setMarginValue(sidebarRef.current.children[0].children[hoverPosition+1].getBoundingClientRect().top - sidebarRef.current.getBoundingClientRect().top);
-    }
+    setMarginValue(sidebarRef.current.children[0].children[hoverPosition+1].getBoundingClientRect().top - sidebarRef.current.getBoundingClientRect().top);
   },[hoverPosition,sidebarRef,setMarginValue]);
 
   return (
