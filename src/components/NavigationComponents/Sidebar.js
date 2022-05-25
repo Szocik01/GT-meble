@@ -26,9 +26,27 @@ export default function Sidebar(props) {
     dispatch(positionActions.onLeavePositionChange());
   }
 
+const onWindowResizeHandler=(event)=>{
+  if(event.target.screen.availWidth<768)
+  {
+    setMarginValue(sidebarRef.current.children[0].children[hoverPosition+1].getBoundingClientRect().top-sidebarRef.current.getBoundingClientRect().top)
+  }
+
+}
+
+useEffect(()=>{
+  window.addEventListener("resize",onWindowResizeHandler);
+
+  return ()=>{
+    window.removeEventListener("resize",onWindowResizeHandler);
+  }
+},[hoverPosition]);
+
   useEffect(()=>{
     setMarginValue(sidebarRef.current.children[0].children[hoverPosition+1].getBoundingClientRect().top - sidebarRef.current.getBoundingClientRect().top);
   },[hoverPosition,sidebarRef,setMarginValue]);
+
+
 
   return (
     <nav className={`${style.sidebar} ${props.isUnfolded ? style.unfolded : ""} ${isScrolled ? style.scrolled : ""}`} ref={sidebarRef}>
