@@ -2,8 +2,9 @@ import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { positionActions } from "../../storage/redux";
 import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 
-export default function Navbar(props) {
+export default React.memo(function Navbar(props) {
   const dispatch = useDispatch();
   const positions = useSelector((state) => {
     return state.sidebarPosition;
@@ -59,4 +60,4 @@ export default function Navbar(props) {
       </div>
     </nav>
   );
-}
+});

@@ -1,6 +1,7 @@
 import style from "./SinglePriceItem.module.css";
+import React from "react";
 
-export default function SinglePriceItem(props) {
+export default React.memo(function SinglePriceItem(props) {
   return (
     <div className={style.container}>
       <p className={style.name}>{props.name}</p> 
@@ -8,4 +9,4 @@ export default function SinglePriceItem(props) {
       <p className={style.price}>{`${props.price} zł/kg`}</p>
     </div>
   );
-}
+});

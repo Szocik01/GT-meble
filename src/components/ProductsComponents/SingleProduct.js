@@ -1,7 +1,8 @@
+import React from "react";
 import { Fragment } from "react";
 import style from "./SingleProduct.module.css";
 
-export default function SingleProduct(props) {
+export default React.memo(function SingleProduct(props) {
   return (
     <Fragment>
       <h3 className={`${style.itemsHeader} ${style.show}`}>{props.title}</h3>
@@ -13,4 +14,4 @@ export default function SingleProduct(props) {
       </p>
     </Fragment>
   );
-}
+});

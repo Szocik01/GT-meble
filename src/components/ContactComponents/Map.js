@@ -1,4 +1,5 @@
 import style from "./Map.module.css";
+import React from "react";
 import { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import Spinner from "../../UI/Spinner";
@@ -8,7 +9,7 @@ const center = {
   lng: 19.40471243372375
 };
 
-export default function Map(props)
+export default React.memo(function Map(props)
 {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -39,5 +40,4 @@ export default function Map(props)
     ) :<div className={style.spinnerContainer}>
         <Spinner/>
     </div> 
-   
-}
+});
