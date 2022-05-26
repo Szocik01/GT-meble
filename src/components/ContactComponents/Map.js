@@ -5,15 +5,15 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import Spinner from "../../UI/Spinner";
 
 const center = {
-  lat: 50.143176723802725,
-  lng: 19.40471243372375
+  lat: 49.96177384937579, 
+  lng: 18.72196144065742
 };
 
 export default React.memo(function Map(props)
 {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyA8W-CgsC9QLz_tbUzrUPO_wtQkKFxAGW0"
+        googleMapsApiKey: "AIzaSyBGqOQBkuE2AA9rqwYpzJ-C1g_yHUpKJCc"
       });
     
       const [map, setMap] = useState(null);
@@ -32,7 +32,7 @@ export default React.memo(function Map(props)
         <GoogleMap
           mapContainerClassName={`${style.map} ${props.gridClass}`}
           center={center}
-          zoom={13}
+          zoom={15}
           onLoad={onLoad}
           onUnmount={onUnmount}>
             <Marker position={center}/>
