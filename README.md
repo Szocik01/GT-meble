@@ -5,6 +5,6 @@
 <h2>Technological Stack</h2> </br>
 <p><b>React, React Redux Toolkit, React Router v6, Google Maps JavaScript Api, CSS, CSS modules.</b></p> <br/>
 <h2>Project Status</h2> </br>
-<p>First fully functional version is finished. Second version, for commercial purposes, will be developed soon.</p> <br/>
+<p>First fully functional but static version is finished. Second version, connected to server through RestAPI is during development and will be updated soon.</p> <br/>
 <h2>Visit Website</h2> </br>
 <p>https://strona-z-rybami-350418.web.app/</p><br/>
