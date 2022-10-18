@@ -8,13 +8,14 @@
     width: 100vw;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 5;
     transition: opacity 0.2s linear;
 }
 
-.display
+.backdrop.display
 {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .backdrop.display.visible
@@ -23,12 +24,8 @@
 }
 
 @media screen and (min-width: 769px) {
-    .menu
-    {
-        display: none;
-    }
     
-    .backdrop.display
+    .backdrop.display.menu
     {
         display: none;
     }

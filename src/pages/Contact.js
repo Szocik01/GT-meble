@@ -11,25 +11,47 @@ import FbSVG from "../Svgs/Facebook.svg";
 import PhoneSVG from "../Svgs/Phone.svg";
 import PinSVG from "../Svgs/Pin.svg";
 
-export default function Contact()
-{
-    const dispatch=useDispatch()
+export default function Contact() {
+  const dispatch = useDispatch();
 
-    useEffect(()=>{
-        dispatch(positionActions.pagePositionChange(4));
-    },[dispatch]);
+  useEffect(() => {
+    dispatch(positionActions.pagePositionChange(4));
+  }, [dispatch]);
 
-
-    return  <Fragment>
-                <SiteTextContainer isObserving={false}>
-                    <div className={style.container}>
-                        <h3 className={style.header}>SKONTAKTUJ SIĘ Z NAMI</h3>
-                        <ContactInfo alt="Facebook" src={FbSVG} gridClass={contactInfoGridStyle.item1}><a href="#"><p>facebook.com/Gecho</p></a></ContactInfo>
-                        <ContactInfo alt="Phone" src={PhoneSVG} gridClass={contactInfoGridStyle.item2}><p>+48 123456789</p></ContactInfo>
-                        <ContactInfo alt="Pin" src={PinSVG} gridClass={contactInfoGridStyle.item3}><p>ul.Kościelecka 2<br/>Pawłowice, 32-480</p></ContactInfo>
-                        <Map gridClass={mapGridStyle.map}/>
-                    </div> 
-                </SiteTextContainer>
-            </Fragment>
-
+  return (
+    <Fragment>
+      <SiteTextContainer isObserving={false}>
+        <div className={style.container}>
+          <h3 className={style.header}>SKONTAKTUJ SIĘ Z NAMI</h3>
+          <ContactInfo
+            alt="Facebook"
+            src={FbSVG}
+            gridClass={contactInfoGridStyle.item1}
+          >
+            <a href="#">
+              <p>facebook.com/Gecho</p>
+            </a>
+          </ContactInfo>
+          <ContactInfo
+            alt="Phone"
+            src={PhoneSVG}
+            gridClass={contactInfoGridStyle.item2}
+          >
+            <p>+48 123456789</p>
+          </ContactInfo>
+          <ContactInfo
+            alt="Pin"
+            src={PinSVG}
+            gridClass={contactInfoGridStyle.item3}
+          >
+            <p>
+              ul.Kościelecka 2<br />
+              Pawłowice, 32-480
+            </p>
+          </ContactInfo>
+          <Map gridClass={mapGridStyle.map} />
+        </div>
+      </SiteTextContainer>
+    </Fragment>
+  );
 }

@@ -2,7 +2,7 @@ import style from "./Map.module.css";
 import React from "react";
 import { useState, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-import Spinner from "../../UI/Spinner";
+import { CircularProgress } from "@mui/material";
 
 const center = {
   lat: 49.96177384937579, 
@@ -38,6 +38,6 @@ export default React.memo(function Map(props)
             <Marker position={center}/>
           </GoogleMap>
     ) :<div className={style.spinnerContainer}>
-        <Spinner/>
+        <CircularProgress sx={{color:"black"}}/>
     </div> 
 });
