@@ -14,6 +14,7 @@ import { Routes, Route } from "react-router-dom";
 import ScrollUpButton from "./UI/ScrollUpButton";
 import Logo from "./UI/Logo";
 import Popup from "./UI/Popup";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -59,6 +60,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         {!token && <Route path="/login" element={<Login />} />}
         {token && <Route path="/product" element={<AddEditProduct />} />}
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       {isPopUpVisible ? <Popup disappearTimeMs={7000} /> : ""}
       <ScrollUpButton />
