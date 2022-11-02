@@ -15,7 +15,7 @@ export default function About()
 
     return<Fragment>
         <SiteTextContainer>
-            <h3 className={style.header}>POZNAJ NAS</h3>
+            <h2 className={style.header}>POZNAJ NAS</h2>
             <div className={style.imageContainer}>
                 <img alt="Random stock guy" src={stockGuyImg}/>
             </div>

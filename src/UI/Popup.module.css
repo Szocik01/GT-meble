@@ -1,0 +1,91 @@
+.container {
+  height: 2.6rem;
+  width: 11rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  margin:  0 0 1.4rem 0.6rem;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(17, 117, 2, 1);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(17, 117, 2, 1);
+  box-shadow: 0px 1px 3px 0px rgba(17, 117, 2, 1);
+}
+
+.error
+{
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(101, 0, 0, 1);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(101, 0, 0, 1);
+  box-shadow: 0px 1px 3px 0px rgba(101, 0, 0, 1);
+
+}
+
+.info
+{
+  font-size: 0.8rem;
+  color: black;
+}
+
+.error .info
+{
+  color: rgb(88, 0, 0);
+}
+
+.iconContainer
+{
+  height: 60%;
+  width: fit-content;
+  cursor: pointer;
+}
+
+@media screen and (min-width:376px)
+{
+  .container
+  {
+    height: 3rem;
+    width: 13rem;
+    margin:  0 0 1.6rem 0.8rem;
+  }
+}
+
+@media screen and (min-width:500px)
+{
+  .container
+  {
+    width: 16rem;
+  }
+
+  .info
+  {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width:769px)
+{
+  .container
+  {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width:1025px)
+{
+  .container
+  {
+    height: 3.4rem;
+    width: 22rem;
+    margin:  0 0 1.8rem 1rem;
+  }
+
+  .info
+  {
+    font-size: 1rem;
+  }
+}

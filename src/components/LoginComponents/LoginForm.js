@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import style from "./LoginForm.module.css";
-import SingleInput from "./SingleInput";
+import SingleInput from "../../UI/InputComponents/SingleInput";
 import { useDispatch } from "react-redux";
 import { loginDataActions } from "../../storage/redux";
 import setSingleCookie from "../../utils/SetSingleCookie";
@@ -85,8 +85,10 @@ export default function LoginForm() {
     <Fragment>
       <form className={style.form} onSubmit={onSubmitHandler}>
         <SingleInput
-          type="text"
-          name="email"
+          inputOptions={{
+            name:"email",
+            type:"text"
+          }}
           title="E-mail"
           inputValue={email}
           setValue={setEmail}
@@ -95,8 +97,10 @@ export default function LoginForm() {
           validationFunction={emailValidation}
         />
         <SingleInput
-          type="password"
-          name="password"
+          inputOptions={{
+            name:"password",
+            type:"password"
+          }}
           title="Hasło"
           inputValue={password}
           setValue={setPassword}

@@ -22,7 +22,7 @@ export default function Contact() {
     <Fragment>
       <SiteTextContainer isObserving={false}>
         <div className={style.container}>
-          <h3 className={style.header}>SKONTAKTUJ SIĘ Z NAMI</h3>
+          <h2 className={style.header}>SKONTAKTUJ SIĘ Z NAMI</h2>
           <ContactInfo
             alt="Facebook"
             src={FbSVG}

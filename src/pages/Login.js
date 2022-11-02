@@ -16,7 +16,7 @@ export default function Login()
 
 
     return <SiteTextContainer>
-        <div className={style.title}>Logowanie</div>
+        <h2 className={style.header}>Logowanie</h2>
         <LoginForm/>
     </SiteTextContainer>
 }

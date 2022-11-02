@@ -30,5 +30,5 @@ export default function SiteTextContainer(props)
         
     },[containerRef,isObserving]);
 
-    return <div className={style.container} ref={containerRef}>{props.children}</div>
+    return <main className={style.container} ref={containerRef}>{props.children}</main>
 }

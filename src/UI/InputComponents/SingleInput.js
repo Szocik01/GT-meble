@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./SingleInput.module.css";
 
 export default function SingleInput(props) {
   const {
-    name,
+    inputOptions,
     title,
-    type,
     inputValue,
     setValue,
     validationErrorInfo,
@@ -13,15 +12,19 @@ export default function SingleInput(props) {
     validationFunction,
   } = props;
 
-  const [isInputFocused, setIsInputFocused] = useState(false);
+  const [isLabelUp, setIsLabelUp] = useState(false);
 
   function moveLabelUp() {
-    setIsInputFocused(true);
+    setIsLabelUp(true);
   }
 
   function moveLabelDown() {
-    if (inputValue.trim().length === 0) {
-      setIsInputFocused(false);
+    if (inputOptions.type !== "number" && inputValue.trim().length === 0) {
+      setIsLabelUp(false);
+      console.log(inputOptions.type)
+    }else if(inputValue.length === 0)
+    {
+      setIsLabelUp(false);
     }
   }
 
@@ -34,23 +37,35 @@ export default function SingleInput(props) {
     setValidationErrorInfo("");
   }
 
-  function onBlurHandler() {
+  function onBlurHandler(event) {
+    if (
+      inputOptions.type === "number" &&
+      !isNaN(parseFloat(event.target.value))
+    ) {
+      setValue(parseFloat(event.target.value).toFixed(2));
+    }
     moveLabelDown();
     validationFunction();
   }
 
+  useEffect(() => {
+    if (
+      (inputOptions.type === "number" && inputValue !== "") ||
+      inputValue.trim() !== ""
+    ) {
+      moveLabelUp();
+    }
+  }, [inputValue]);
+
   return (
     <div className={style.container}>
       <label className={style.label}>
-        <span
-          className={`${style.text} ${isInputFocused ? style.transform : ""}`}
-        >
+        <span className={`${style.text} ${isLabelUp ? style.transform : ""}`}>
           {title}
         </span>
         <input
+          {...inputOptions}
           value={inputValue}
-          type={type}
-          name={name}
           className={`${style.input} ${validationErrorInfo ? style.error : ""}`}
           onFocus={onFocusHandler}
           onBlur={onBlurHandler}

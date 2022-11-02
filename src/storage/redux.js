@@ -43,11 +43,31 @@ const loginDataSlice = createSlice({
   }
 });
 
+const popUpInfoSlice = createSlice({
+  name:"popUpInfo",
+  initialState:{isVisible: false,isError:false,message:""},
+  reducers:{
+    setMessage(state,action)
+    {
+      state.isError=action.payload.isError;
+      state.message=action.payload.message;
+      state.isVisible=action.payload.isVisible;
+    },
+    removeMessage(state)
+    {
+      state.isError=false;
+      state.message="";
+      state.isVisible=false;
+    }
+  }
+})
+
 const store = configureStore({
   reducer: {
     sidebarPosition: sidebarPositionSlice.reducer,
     navigationColor: navigationColorSlice.reducer,
-    loginData: loginDataSlice.reducer
+    loginData: loginDataSlice.reducer,
+    popUpInfo: popUpInfoSlice.reducer
   },
 });
 
@@ -55,3 +75,4 @@ export default store;
 export const positionActions = sidebarPositionSlice.actions;
 export const navigationColorActions = navigationColorSlice.actions;
 export const loginDataActions=loginDataSlice.actions;
+export const popUpInfoActions=popUpInfoSlice.actions;

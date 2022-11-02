@@ -1,0 +1,123 @@
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.imageUpload {
+  border-radius: 5px;
+  width: 100%;
+  height: 12rem;
+  border: 3px dashed rgb(190, 190, 190);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.image {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 1);
+}
+
+.text {
+  font-size: 1.1rem;
+  color: rgb(190, 190, 190);
+}
+
+.icon {
+  color: rgb(190, 190, 190);
+}
+
+.imageUpload.draggedOver,
+.imageUpload:active {
+  border: 3px solid rgb(125, 125, 125);
+}
+
+.imageUpload.draggedOver .text,
+.imageUpload.draggedOver .icon,
+.imageUpload:active .text,
+.imageUpload:active .icon {
+  color: rgb(125, 125, 125);
+}
+
+.input {
+  display: none;
+}
+
+.errorInfo,
+.imageInfo
+{
+  width: 100%;
+  padding-left: 0.1rem;
+  font-size: 0.7rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.imageInfo
+{
+  justify-content: center;
+  color: black;
+}
+
+.errorInfo {
+  color: rgb(182, 0, 0);
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 376px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .container {
+    width: 55%;
+  }
+
+  .imageInfo,
+  .errorInfo {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .container {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .imageUpload{
+    height: 15rem;
+  }
+
+  .imageInfo,
+  .errorInfo  {
+    font-size: 0.9rem;
+  }
+}

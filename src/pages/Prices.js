@@ -15,7 +15,7 @@ export default function Prices() {
   return (
     <SiteTextContainer>
       <div className={style.container}>
-        <h3 className={style.header}>SPRAWDŹ NASZE CENY</h3>
+        <h2 className={style.header}>SPRAWDŹ NASZE CENY</h2>
         <SinglePriceItem name="Karp" price="50" />
         <SinglePriceItem name="Karaś" price="38" />
         <SinglePriceItem name="Łosoś" price="40" />

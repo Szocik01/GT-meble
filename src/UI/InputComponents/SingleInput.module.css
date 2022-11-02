@@ -8,8 +8,9 @@
 
 .text
 {
-    transition: 0.3s ease-out transform, 0.3s ease-out font-size;
+    transition: 0.3s ease-out transform, 0.3s ease-out font-size, 0.3s ease-out color;
     width: fit-content;
+    margin-left: 0.1rem;
     transform: translateY(1.5rem);
     font-size: 1.1rem;
     height: 1.3rem;
@@ -21,6 +22,7 @@
     border: none;
     border-bottom: 1px solid rgb(190, 190, 190);
     font-size: 1.1rem;
+    padding: 0  0.1rem;
 }
 
 .input.error
@@ -39,12 +41,14 @@
 {
     transform: translateY(0);
     font-size: 0.9rem;
+    color: rgb(38, 38, 38);
 }
 
 .errorInfo
 {
     color: rgb(182, 0, 0);
     width: 100%;
+    padding-left: 0.1rem;
     font-size: 0.7rem;
     height: 2rem;
     display: flex;
