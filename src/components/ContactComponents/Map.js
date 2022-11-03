@@ -13,7 +13,7 @@ export default React.memo(function Map(props)
 {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyBGqOQBkuE2AA9rqwYpzJ-C1g_yHUpKJCc"
+        googleMapsApiKey: "AIzaSyCWBCLfNB4AowWeCDb3vsj-Mt1SY0luMJc"
       });
     
       const [map, setMap] = useState(null);
