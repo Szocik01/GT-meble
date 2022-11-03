@@ -111,7 +111,7 @@ export default function ProductForm(props) {
     }
     try {
       const response = await fetch(
-        `http://localhost:8080/product/${
+        `https://ryby-nodejs.herokuapp.com/product/${
           httpMethod === "PUT" ? "edit" : "add"
         }`,
         {
@@ -156,7 +156,7 @@ export default function ProductForm(props) {
   const fetchProduct = useCallback(async () => {
     setServerErrorInfo("");
     try {
-      const response = await fetch(`http://localhost:8080/product/${itemId}`);
+      const response = await fetch(`https://ryby-nodejs.herokuapp.com/product/${itemId}`);
       if (response.status === 404) {
         throw new Error("Nie znaleziono produktu.");
       } else if (response.status >= 500) {

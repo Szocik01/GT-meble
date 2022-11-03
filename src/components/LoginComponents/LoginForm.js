@@ -50,7 +50,7 @@ export default function LoginForm() {
       setIsSpinnerActive(false);
       return;
     }
-    fetch("http://localhost:8080/auth/login", {
+    fetch("https://ryby-nodejs.herokuapp.com/auth/login", {
       body: JSON.stringify({ email: email, password: password }),
       method: "POST",
       headers: {

@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import style from "./TextAreaInput.module.css";
 
 export default function TextAreaInput(props) {
@@ -14,12 +14,11 @@ export default function TextAreaInput(props) {
 
   const [isLabelUp, setIsLabelUp] = useState(false);
 
-  function moveLabelDown() {
-    if(!(inputValue.trim().length>0))
-    {
-      setIsLabelUp(false); 
+  const moveLabelDown = useCallback(() => {
+    if (!(inputValue.trim().length > 0)) {
+      setIsLabelUp(false);
     }
-  }
+  },[inputValue]);
 
   function moveLabelUp() {
     setIsLabelUp(true);
@@ -39,16 +38,13 @@ export default function TextAreaInput(props) {
     validationFunction();
   }
 
-  useEffect(()=>{
-    if(inputValue.trim()!=="")
-    {
+  useEffect(() => {
+    if (inputValue.trim() !== "") {
       moveLabelUp();
-    }
-    else
-    {
+    } else {
       moveLabelDown();
     }
-  },[inputValue]);
+  }, [inputValue,moveLabelDown]);
 
   return (
     <div className={style.container}>

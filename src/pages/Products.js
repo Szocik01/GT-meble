@@ -9,10 +9,6 @@ import { useSelector } from "react-redux";
 import ContentLoading from "../UI/ContentLoading";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import dorszImg from "../images/dorsz.jpg";
-import karpImg from "../images/karp.jpg";
-import lososImg from "../images/losos.jpg";
-import karasImg from "../images/karas.jpg";
 
 export default function Products() {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +23,7 @@ export default function Products() {
   const fetchProducts = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:8080/products", {
+      const response = await fetch("https://ryby-nodejs.herokuapp.com/products", {
         method: "GET",
       });
       if (!response.ok) {

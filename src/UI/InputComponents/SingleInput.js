@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import style from "./SingleInput.module.css";
 
 export default function SingleInput(props) {
@@ -18,13 +18,13 @@ export default function SingleInput(props) {
     setIsLabelUp(true);
   }
 
-  function moveLabelDown() {
+  const moveLabelDown = useCallback(() => {
     if (inputOptions.type !== "number" && inputValue.trim().length === 0) {
       setIsLabelUp(false);
     } else if (inputValue.length === 0) {
       setIsLabelUp(false);
     }
-  }
+  }, [inputOptions.type, inputValue]);
 
   function setValueHandler(event) {
     setValue(event.target.value);
@@ -55,7 +55,7 @@ export default function SingleInput(props) {
     } else {
       moveLabelDown();
     }
-  }, [inputValue]);
+  }, [inputValue,moveLabelDown,inputOptions.type]);
 
   return (
     <div className={style.container}>

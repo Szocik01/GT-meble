@@ -20,7 +20,7 @@ export default function Prices() {
   const fetchPrices = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:8080/products", {
+      const response = await fetch("https://ryby-nodejs.herokuapp.com/products", {
         method: "GET",
       });
       if (!response.ok) {
