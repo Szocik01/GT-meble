@@ -5,6 +5,19 @@
     margin-bottom: 1.2rem;
 }
 
+.buttonContainer
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer a
+{
+    text-decoration: none;
+}
+
 @media screen and (min-width:426px) {
     .header
     {

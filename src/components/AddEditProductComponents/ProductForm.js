@@ -133,6 +133,14 @@ export default function ProductForm(props) {
       } else if (response.status >= 500) {
         throw new Error("Wewnętrzny błąd serwera");
       }
+      if(!itemId)
+      {
+        setProductName("");
+        setProductDesc("");
+        setProductPrice("");
+        setProductImage(null);
+      }
+
       dispatch(
         popUpInfoActions.setMessage({
           message: `Pomyślnie ${itemId ? "edytowano" : "dodano"} produkt`,

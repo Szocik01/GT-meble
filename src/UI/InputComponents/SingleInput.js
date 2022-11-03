@@ -21,9 +21,7 @@ export default function SingleInput(props) {
   function moveLabelDown() {
     if (inputOptions.type !== "number" && inputValue.trim().length === 0) {
       setIsLabelUp(false);
-      console.log(inputOptions.type)
-    }else if(inputValue.length === 0)
-    {
+    } else if (inputValue.length === 0) {
       setIsLabelUp(false);
     }
   }
@@ -54,6 +52,8 @@ export default function SingleInput(props) {
       inputValue.trim() !== ""
     ) {
       moveLabelUp();
+    } else {
+      moveLabelDown();
     }
   }, [inputValue]);
 

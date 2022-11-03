@@ -44,6 +44,10 @@ export default function TextAreaInput(props) {
     {
       moveLabelUp();
     }
+    else
+    {
+      moveLabelDown();
+    }
   },[inputValue]);
 
   return (
