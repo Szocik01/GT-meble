@@ -14,7 +14,7 @@ export default React.memo(function SingleProduct(props) {
 
   const deleteItemHandler = async () => {
     try {
-      const response = await fetch("http://localhost:8080/product/delete", {
+      const response = await fetch("https://ryby-nodejs.herokuapp.com/product/delete", {
         method: "DELETE",
         headers: { "Content-Type": "application/json", Authorization: token },
         body: JSON.stringify({

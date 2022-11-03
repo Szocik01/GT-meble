@@ -66,7 +66,7 @@ export default function Products() {
               id={item.id}
               key={item.id}
               title={item.name}
-              image={`http://localhost:8080/${item.imageURL}`}
+              image={`https://ryby-nodejs.herokuapp.com/${item.imageURL}`}
               token={token}
               setProducts={setProducts}
             >
