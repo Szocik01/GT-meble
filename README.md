@@ -7,6 +7,8 @@
 <h2>Project Status</h2> </br>
 <p>Second fully functional, dynamic version is finished. It is not for commercial purposes yet. Third, commercial version will be created when my friend will need it. Even though this version is not commercial, it contains all features that commercial version will have.</p> <br/>
 <h2>For Recruiters</h2> </br>
-<p>To fully experience app's features I recommend logging in as admin and trying to add, edit and remove data. I am asking not to delete or change any data that has originally been on the site. If you want to try app's admin features, add your own products and then modify it. Note: images can also be added through dragging from desktop, not only through clicking on upload field :). </p></br>
+<p>To fully experience app's features I recommend logging in as admin and trying to add, edit and remove data. I am asking not to delete or change any data that has originally been on the site. If you want to try app's admin features, add your own products and then modify it.</p></br>
+<p>Login: admin@gmail.com Hasło: testtest</p></br>
+<p>Note: images can also be added through dragging from desktop, not only through clicking on upload field :). </p></br>
 <h2>Visit Website</h2> </br>
 <p>https://gecho-app-36256.web.app/</p><br/>
