@@ -122,7 +122,7 @@ export default function ImageUploadInput(props) {
       </Button>
       <img
         className={style.image}
-        src={imagePreviewUrl?imagePreviewUrl:`http://localhost:8080/${editImageUrl}`}
+        src={imagePreviewUrl?imagePreviewUrl:`https://ryby-nodejs.herokuapp.com/${editImageUrl}`}
         alt={inputValue?inputValue.name:""}
         loading="lazy"
       />

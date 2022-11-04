@@ -33,7 +33,7 @@
 {
     .imageContainer img
     {
-        max-width: 70%;
+        max-width: 60%;
     }
 }
 
@@ -44,7 +44,7 @@
     }
 }
 
-@media screen and (min-width:551px)
+@media screen and (min-width:601px)
 {
     .text
     {
@@ -89,6 +89,8 @@
     {
         margin-bottom: 1.5rem;
     }
+
+
 }
 
 @media screen and (min-width:1201px)
@@ -97,9 +99,14 @@
     {
         font-size: 1.4rem;
     }
+
+    .imageContainer img
+    {
+        max-width: 40%;
+    }
 }
 
-@media screen and (min-width:1501px)
+@media screen and (min-width:1601px)
 {
     .text
     {
