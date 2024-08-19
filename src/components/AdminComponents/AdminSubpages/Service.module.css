@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.buttonsContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title {
+  width: 100%;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-primary-text);
+}
+
+@media screen and (min-width: 769px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}

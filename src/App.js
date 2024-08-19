@@ -1,20 +1,19 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useLayoutEffect } from "react";
 import "./App.css";
 import Navigation from "./components/NavigationComponents/Navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { navigationColorActions, loginDataActions } from "./storage/redux";
 import Main from "./pages/Main";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
-import Products from "./pages/Products";
-import Prices from "./pages/Prices";
+import Services from "./pages/Services";
 import Login from "./pages/Login";
-import AddEditProduct from "./pages/AddEditProduct";
-import { Routes, Route } from "react-router-dom";
-import ScrollUpButton from "./UI/ScrollUpButton";
-import Logo from "./UI/Logo";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Popup from "./UI/Popup";
 import PageNotFound from "./pages/PageNotFound";
+import Realizations from "./pages/Realizations";
+import RealizationDetail from "./pages/RealizationDetail";
+import Admin from "./pages/Admin";
+import Footer from "./components/FooterComponents/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,11 +37,11 @@ function App() {
     });
   }, [dispatch]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const cookiesArray = document.cookie.split(";");
     for (const cookie of cookiesArray) {
       const cookieArray = cookie.split("=");
-      if (cookieArray[0] === "token") {
+      if (cookieArray[0].trim() === "token") {
         dispatch(loginDataActions.setTokenInRedux({ token: cookieArray[1] }));
       }
     }
@@ -50,20 +49,30 @@ function App() {
 
   return (
     <Fragment>
-      <Navigation />
-      <Logo />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/prices" element={<Prices />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route element={<Navigation />}>
+          <Route element={<Footer />}>
+            <Route path="/realizations" element={<Realizations />} />
+            <Route
+              path="realization/:realizationId"
+              element={<RealizationDetail />}
+            />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Route>
+        </Route>
         {!token && <Route path="/login" element={<Login />} />}
-        {token && <Route path="/product" element={<AddEditProduct />} />}
-        <Route path="*" element={<PageNotFound/>}/>
+        {token && (
+          <Route
+            path="/login"
+            element={<Navigate to="/admin/realizations" />}
+          />
+        )}
+        {token && <Route path="/admin/*" element={<Admin />} />}
       </Routes>
-      {isPopUpVisible ? <Popup disappearTimeMs={7000} /> : ""}
-      <ScrollUpButton />
+      {isPopUpVisible ? <Popup disappearTimeMs={5000} /> : ""}
     </Fragment>
   );
 }

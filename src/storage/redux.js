@@ -2,7 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const sidebarPositionSlice = createSlice({
   name: "sidebarPosition",
-  initialState: { currentPosition: 0, hoverPosition: 0 },
+  initialState: { currentPosition: 1, hoverPosition: 1 },
   reducers: {
     hoverPositionChange(state, action) {
       state.hoverPosition = action.payload;

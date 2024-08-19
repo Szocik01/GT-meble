@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    position: relative;
+    min-height: calc(100dvh - 2rem);
+    -webkit-box-shadow: 0px 0px 8px 1px rgb(161, 161, 161, 0.4);
+    -moz-box-shadow: 0px 0px 8px 1px rgb(161, 161, 161, 0.4);
+    box-shadow: 0px 0px 8px 1px rgb(161, 161, 161, 0.4);
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.5rem 0.5rem;
+}
+
+@media screen and (min-width:576px) {
+    .container{
+        padding: 1.5rem;
+    }
+}

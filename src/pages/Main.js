@@ -1,37 +1,69 @@
-import { Fragment, useEffect } from "react"
+import { useEffect } from "react";
 import style from "./Main.module.css";
 import { useDispatch } from "react-redux";
 import { positionActions } from "../storage/redux";
-import { Link } from "react-router-dom";
-import SiteTextContainer from "../UI/SiteTextContainer";
-import ScrollUpSVG from "../Svgs/ScrollUp.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Autoplay } from "swiper/modules";
+import ImageSlide from "../components/MainPageComponents/ImageSlide";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import image1 from "../images/MainPageSlider/IMG-20230107-WA0000.jpg";
+import image2 from "../images/MainPageSlider/IMG-20230107-WA0003.jpg";
+import image3 from "../images/MainPageSlider/IMG-20230107-WA0012.jpg";
+import image4 from "../images/MainPageSlider/IMG-20230107-WA0014.jpg";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import MainLink from "../components/MainPageComponents/MainLink";
 
-export default function Main()
-{
-    const dispatch=useDispatch()
+export default function Main() {
+  const dispatch = useDispatch();
 
-    useEffect(()=>{
-        dispatch(positionActions.pagePositionChange(0))
-    },[dispatch]);
+  useEffect(() => {
+    dispatch(positionActions.pagePositionChange(0));
+  }, [dispatch]);
 
-
-    return <Fragment>
-        <SiteTextContainer isObserving={true}>
-            <h2 className={style.mainHeader}>Najlepsze ryby jakie możesz kupić!</h2>
-            <p className={style.text}>Nasze ryby, hodowane na naturalnych paszach i zbożach, dają gwarancję naturalengo smaku, który wszyscy uwielbiamy. Duży wybór ryb jaki oferujemy daje Ci pewność, że dostaniesz u nas dokładnie to co lubisz. Nasze ryby nie przyjmują antybiotyków, co dodatkowo podnosi ich walory smakowe i zdrowotne. Sprawdź naszą ofertę i wybierz to co lubisz najbardziej!</p>
-            <div className={style.linkContainer}>
-                <Link to="/products" className={style.link}>Sprawdź ofertę <img alt="Strzałka" src={ScrollUpSVG}/></Link>
-            </div>
-            <h2 className={style.mainHeader}>Świetne ryby w dobrych cenach!</h2>
-            <p className={style.text}>Skosztuj ekologicznych i naturalnie hodowanych ryb w cenach na Twoją kieszeń. Przekonaj się sam, że aby dostać najwyższej jakości rybę, nie trzeba wydawać wielu pieniędzy.</p>
-            <div className={style.linkContainer}>
-                <Link to="/prices" className={style.link}>Sprawdź ceny<img alt="Strzałka" src={ScrollUpSVG}/></Link>
-            </div>
-            <h2 className={style.mainHeader}>Skontaktujmy się!</h2>
-            <p className={style.text}>Skontaktuj się z nami już dziś. Jeśli nie wiesz co wybrać to z chęcią pomożemy Ci wybrać rybę odpowiednią do twoich wymagań. Jeśli jednak wiesz już czego potrzebujesz, nie ma co zwlekać. Zadzwoń, a wspólnie ustalimy wszystkie szczegóły Twojego zamówienia.</p>
-            <div className={style.linkContainer}>
-                <Link to="/contact" className={style.link}>Dane kontaktowe<img alt="Strzałka" src={ScrollUpSVG}/></Link>
-            </div>
-        </SiteTextContainer>
-    </Fragment>
+  return (
+  <div className={style.container}>
+      <Swiper
+        spaceBetween={0}
+        modules={[EffectFade, Autoplay]}
+        effect="fade"
+        speed={5500}
+        autoplay={{
+          stopOnLastSlide: false,
+          delay: 2500,
+         }}
+        loop={true}
+      >
+        <SwiperSlide>
+          <ImageSlide image={image1} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ImageSlide image={image2} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ImageSlide image={image3} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <ImageSlide image={image4} />
+        </SwiperSlide>
+      </Swiper>
+      <span className={style.logo}>
+        GT MEBLE
+      </span>
+      <div className={style.linkContainer}>
+        <MainLink url="/realizations">
+          Realizacje
+          <ArrowForwardIosIcon />
+        </MainLink>
+        <MainLink url="/services">
+          O usługach
+          <ArrowForwardIosIcon />
+        </MainLink>
+        <MainLink url="/contact">
+          Kontakt
+          <ArrowForwardIosIcon />
+        </MainLink>
+      </div>
+    </div>
+  );
 }

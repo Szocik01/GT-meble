@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  margin-top: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.header {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary-text);
+}
+
+.subtitle {
+  color: rgb(96, 96, 96);
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+
+@media screen and (min-width:769px) {
+  .header
+  {
+      font-size: 2.4rem;
+  }
+}

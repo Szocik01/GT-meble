@@ -1,0 +1,40 @@
+.row{
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main{
+    width: 100%;
+    padding: 1rem;
+}
+
+.side{
+    width: 100%;
+    padding: 1rem;
+}
+
+@media screen and (min-width:567px) {
+    .main{
+        padding: 2rem 1rem;
+    }
+    
+    .side{
+        padding: 2rem 1rem;
+    }
+    
+}
+
+@media screen and (min-width:769px) {
+    .main{
+        width: 75%;
+        padding: 0 1rem;
+    }
+
+    .side{
+        width: 25%;
+        padding: 0 1rem;
+    }
+}
