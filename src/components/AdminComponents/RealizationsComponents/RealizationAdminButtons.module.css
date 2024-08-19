@@ -1,0 +1,9 @@
+.container{
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    z-index: 5;
+}

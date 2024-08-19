@@ -1,23 +1,14 @@
 import style from "./ImageUploadInput.module.css";
 import ImageIcon from "@mui/icons-material/Image";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useRef} from "react";
 
 export default function ImageUploadInput(props) {
   const {
-    name,
-    text,
-    setValue,
-    inputValue,
-    validationFunction,
-    validationErrorInfo,
-    setValidationErrorInfo,
-    editImageUrl,
-    setEditImageUrl
+    dropzoneText,
+    onUploadImages,
   } = props;
 
-  const [imagePreviewUrl, setImagePreviewUrl] = useState("");
+  const labelRef = useRef();
 
   function dragoverImageHandler(event) {
     event.preventDefault();
@@ -25,13 +16,7 @@ export default function ImageUploadInput(props) {
   }
 
   function dragLeaveImageHandler(event) {
-    if (
-      !(
-        event.target.tagName === "svg" ||
-        event.target.tagName === "path" ||
-        event.target.tagName === "SPAN"
-      )
-    ) {
+    if (event.relatedTarget.closest("label") !== labelRef.current) {
       event.currentTarget.classList.remove(style.draggedOver);
     }
   }
@@ -40,42 +25,16 @@ export default function ImageUploadInput(props) {
     event.preventDefault();
     event.currentTarget.classList.remove(style.draggedOver);
     const files = event.dataTransfer.files;
-    if (files && files.length > 0) {
-      const isValid = validationFunction(files[0]);
-      if (isValid) {
-        setValidationErrorInfo("");
-        setValue(files[0]);
-      }
-    }
+    onUploadImages(files);
   }
 
   function setImageFileHandler(event) {
-    if (event.target.files) {
-      const isValid = validationFunction(event.target.files[0]);
-      if (isValid) {
-        setValidationErrorInfo("");
-        setValue(event.target.files[0]);
-      }
-    }
+    const files = event.target.files;
+    onUploadImages(files);
   }
 
-  function deleteImageHandler()
-  {
-    setValue(null);
-    setEditImageUrl("");
-  }
-
-  useEffect(() => {
-    if (inputValue) {
-      const previewUrl = URL.createObjectURL(inputValue);
-      setImagePreviewUrl(previewUrl);
-    } else {
-      setImagePreviewUrl("");
-    }
-  }, [inputValue]);
-
-  return !(imagePreviewUrl || editImageUrl)? (
-    <label className={style.container}>
+  return (
+    <label className={style.container} ref={labelRef}>
       <div
         className={style.imageUpload}
         onDragOver={dragoverImageHandler}
@@ -86,47 +45,15 @@ export default function ImageUploadInput(props) {
           sx={{ width: "40%", height: "40%" }}
           className={style.icon}
         />
-        <span className={style.text}>{text}</span>
+        <span className={style.text}>{dropzoneText}</span>
         <input
           type="file"
-          name={name}
+          multiple
+          name="images-file-input"
           className={style.input}
           onChange={setImageFileHandler}
         />
       </div>
-      <span className={style.errorInfo}>{validationErrorInfo}</span>
     </label>
-  ) : (
-    <div className={style.container}>
-      <Button
-        type="button"
-        variant="contained"
-        color="error"
-        sx={{
-          minWidth: "auto",
-          width: "1.7rem",
-          height: "1.7rem",
-          padding: 0,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "absolute",
-          top:"3px",
-          right:"3px"
-        }}
-        onClick={deleteImageHandler}
-      >
-        <DeleteIcon
-          sx={{ width: "90%", height: "90%", color:"white"}}
-        />
-      </Button>
-      <img
-        className={style.image}
-        src={imagePreviewUrl?imagePreviewUrl:`https://ryby-nodejs.herokuapp.com/${editImageUrl}`}
-        alt={inputValue?inputValue.name:""}
-        loading="lazy"
-      />
-      <span className={style.imageInfo}>{inputValue ? inputValue.name : ""}</span>
-    </div>
   );
 }

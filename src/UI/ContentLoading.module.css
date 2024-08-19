@@ -1,7 +1,17 @@
-.loading
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+}
+
+.loading.blurOverlay {
+  height: 100%;
+  background-color: rgb(222, 221, 221, 0.15);
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }

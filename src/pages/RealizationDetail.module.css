@@ -1,0 +1,45 @@
+.header{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.mainImage{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    -o-object-fit: cover;
+    object-position: center;
+    -o-object-position: center;
+    background-color: #f0f5f8;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.description{
+    margin: 3rem 0;
+    width: 100%;
+    text-align: justify;
+}
+
+.subtitle{
+    color: rgb(96, 96, 96);
+    font-size: 1.2rem;
+}
+
+
+@media screen and (min-width:769px)
+{  
+    .header
+    {
+        font-size: 2.4rem;
+    }
+
+    .mainImage{
+        aspect-ratio: 16/9;
+        object-fit: contain;
+        -o-object-fit: contain ;
+    }
+}

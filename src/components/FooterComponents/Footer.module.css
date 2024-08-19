@@ -1,0 +1,48 @@
+.footer{
+    background-color: var(--color-primary);
+    padding: 4rem 0;
+}
+
+.footerColumn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+
+.footerColumn:first-of-type{
+    margin-bottom: 2.5rem;
+}
+
+.logo{
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    font-family: "Inter", "Roboto", sans-serif;
+}
+
+.dataList{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dataList li,
+.dataList a{
+    color: white;
+    font-size: 1rem;
+}
+
+.websiteMap{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.7rem;
+}
+
+@media screen and (min-width: 576px){
+    .footerColumn{
+        width: 50%;
+    }
+}

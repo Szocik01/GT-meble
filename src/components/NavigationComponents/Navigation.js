@@ -5,7 +5,8 @@ import Backdrop from "../../UI/Backdrop";
 import { loginDataActions } from "../../storage/redux";
 import { useDispatch } from "react-redux";
 import deleteSingleCookie  from "../../utils/DeleteSingleCookie";
-import {useNavigate} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
+import style from './Navigation.module.css';
 
 export default function Navigation()
 {
@@ -21,8 +22,10 @@ export default function Navigation()
     }
 
     return <Fragment>
-        <Navbar setIsUnfolded={setIsUnfolded} isUnfolded={isUnfolded} logoutHandler={logoutHandler}/>
-        <Sidebar isUnfolded={isUnfolded} logoutHandler={logoutHandler}/>
+        <Navbar setIsUnfolded={setIsUnfolded} isUnfolded={isUnfolded}/>
+        <Sidebar isUnfolded={isUnfolded}/>
         <Backdrop isForNavigation={true} isUnfolded={isUnfolded} setIsVisible={setIsUnfolded}/>
+        <div className={style.underNavigationFiller}></div>
+        <Outlet/>
     </Fragment>
 }

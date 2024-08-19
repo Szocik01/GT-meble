@@ -2,23 +2,34 @@ import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { positionActions } from "../../storage/redux";
 import { useDispatch, useSelector } from "react-redux";
-import React from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 export default React.memo(function Navbar(props) {
-  const { isUnfolded, setIsUnfolded, logoutHandler } = props;
+  const { isUnfolded, setIsUnfolded } = props;
+
+  const [taggerPosition, setTaggerPosition] = useState({
+    marginLeft: 0,
+    width: 0,
+  });
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   const dispatch = useDispatch();
 
-  const positions = useSelector((state) => {
-    return state.sidebarPosition;
+  const navbarLinksContainerRef = useRef();
+  const taggerRef = useRef();
+
+  const hoverPosition = useSelector((state) => {
+    return state.sidebarPosition.hoverPosition;
   });
 
   const isScrolled = useSelector((state) => {
     return state.navigationColor.isScrolled;
-  });
-
-  const token = useSelector((state) => {
-    return state.loginData.token;
   });
 
   function hoverPositionChangeHandler(number) {
@@ -34,6 +45,32 @@ export default React.memo(function Navbar(props) {
       return !prevValue;
     });
   }
+  const calculateTaggerPosition = useCallback(() => {
+    const marginLeft =
+      navbarLinksContainerRef.current.children[
+        hoverPosition
+      ].getBoundingClientRect().left -
+      navbarLinksContainerRef.current.getBoundingClientRect().left;
+    const width =
+      navbarLinksContainerRef.current.children[
+        hoverPosition
+      ].getBoundingClientRect().width;
+    return { marginLeft: marginLeft, width: width };
+  }, [hoverPosition, navbarLinksContainerRef]);
+
+  useEffect(() => {
+    let timer;
+    if(isFirstLoad){
+      timer = setTimeout(() => {
+        setIsFirstLoad(false)
+      }, 10);
+      return ()=>{
+        clearTimeout(timer);
+      }
+    }
+    setTaggerPosition(calculateTaggerPosition());
+  }, [calculateTaggerPosition,isFirstLoad]);
+
 
   return (
     <nav className={`${style.navbar} ${isScrolled ? style.scrolled : ""}`}>
@@ -41,35 +78,34 @@ export default React.memo(function Navbar(props) {
         className={`${style.hamburger} ${isUnfolded ? style.unfolded : ""}`}
         onClick={unfoldingHandler}
       ></div>
+      <Link to="" className={style.logo}>GT Meble</Link>
       <div
         className={style.linksContainer}
         onMouseLeave={onLeavePositionChangeHandler}
+        ref={navbarLinksContainerRef}
       >
         <div
-          className={`${style.tagger} ${
-            style[`position${positions.hoverPosition}`]
-          } ${token ? style.logout : ""}`}
+          className={style.tagger}
+          ref={taggerRef}
+          style={{
+            marginLeft: `${taggerPosition.marginLeft.toFixed(2)}px`,
+            width: `${taggerPosition.width.toFixed(2)}px`,
+          }}
         ></div>
-        <Link to="" onMouseEnter={hoverPositionChangeHandler.bind(null, 0)}>
+        <Link to="" onMouseEnter={hoverPositionChangeHandler.bind(null, 1)}>
           Strona główna
         </Link>
         <Link
-          to="products"
-          onMouseEnter={hoverPositionChangeHandler.bind(null, 1)}
-        >
-          Produkty
-        </Link>
-        <Link
-          to="prices"
+          to="realizations"
           onMouseEnter={hoverPositionChangeHandler.bind(null, 2)}
         >
-          Cennik
+          Realizacje
         </Link>
         <Link
-          to="about"
+          to="services"
           onMouseEnter={hoverPositionChangeHandler.bind(null, 3)}
         >
-          O firmie
+          O usługach
         </Link>
         <Link
           to="contact"
@@ -77,21 +113,6 @@ export default React.memo(function Navbar(props) {
         >
           Kontakt
         </Link>
-        {!token ? (
-          <Link
-            to="/login"
-            onMouseEnter={hoverPositionChangeHandler.bind(null, 5)}
-          >
-            Logowanie
-          </Link>
-        ) : (
-          <span
-            onMouseEnter={hoverPositionChangeHandler.bind(null, 5)}
-            onClick={logoutHandler}
-          >
-            Wyloguj
-          </span>
-        )}
       </div>
     </nav>
   );
