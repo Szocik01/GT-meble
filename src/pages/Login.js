@@ -26,7 +26,7 @@ export default function Login() {
   const [serverErrorInfo, setServerErrorInfo] = useState("");
   const [canDisplayEmailError, setDisplayEmailError] = useState(false);
   const [canDisplayPasswordError, setDisplayPasswordError] = useState(false);
-  const [sendRequest, isLoading] = useHttp(`${API_CALL_URL_BASE}/auth/login`);
+  const [sendRequest, isLoading] = useHttp(`${API_CALL_URL_BASE}api/auth/login`);
   let passwordErrorInfo = "";
   let emailErrorInfo = "";
 

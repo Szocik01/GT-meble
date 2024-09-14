@@ -13,9 +13,9 @@ import ContentLoading from "../../../UI/ContentLoading";
 export default function Service() {
   const [editData, setEditData] = useState(null);
   const [isEditorLoading, setEditorLoading] = useState(true);
-  const [getData, isDataLoading] = useHttp(`${API_CALL_URL_BASE}/service`);
+  const [getData, isDataLoading] = useHttp(`${API_CALL_URL_BASE}api/service`);
   const [saveData, isSaveLoading] = useHttp(
-    `${API_CALL_URL_BASE}/service/${editData === null ? "add" : "edit"}`
+    `${API_CALL_URL_BASE}api/service/${editData === null ? "add" : "edit"}`
   );
 
   const token = useSelector((state)=>{

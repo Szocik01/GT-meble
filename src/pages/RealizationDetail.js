@@ -15,7 +15,7 @@ export default function RealizationDetail() {
   const [model, setModel] = useState(null);
   const { realizationId } = useParams();
   const [fetchRealizationData, isLoading] = useHttp(
-    `${API_CALL_URL_BASE}/post/${realizationId}`, true
+    `${API_CALL_URL_BASE}api/post/${realizationId}`, true
   );
   const dispatch = useDispatch();
 

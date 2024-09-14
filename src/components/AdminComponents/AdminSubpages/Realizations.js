@@ -12,9 +12,9 @@ import CustomPagination from "../../../UI/CustomPagination";
 
 export default function Realizations() {
   const [postsData, setPostsData] = useState({});
-  const [fetchProducts, isLoading] = useHttp(`${API_CALL_URL_BASE}/posts`);
+  const [fetchProducts, isLoading] = useHttp(`${API_CALL_URL_BASE}api/posts`);
   const [deleteProduct, isDeleting] = useHttp(
-    `${API_CALL_URL_BASE}/post/delete/`
+    `${API_CALL_URL_BASE}api/post/delete/`
   );
 
   const [searchParams, setSearchParams] = useSearchParams();

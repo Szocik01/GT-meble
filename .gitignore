@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.vscode
+.env
+.env.development
+
 # dependencies
 /node_modules
 /.pnp
@@ -7,8 +11,6 @@
 
 # testing
 /coverage
-
-Constants.js
 
 # production
 /build

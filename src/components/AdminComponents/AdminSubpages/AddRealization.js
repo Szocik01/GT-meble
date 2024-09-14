@@ -23,7 +23,7 @@ export default function AddRealization() {
   });
 
   const [sendAddRealizationRequest, isAddRealizationLoading] = useHttp(
-    `${API_CALL_URL_BASE}/post/add`
+    `${API_CALL_URL_BASE}api/post/add`
   );
 
   function addRealizationResponseHandler(response) {

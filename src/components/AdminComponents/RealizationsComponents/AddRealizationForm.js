@@ -62,7 +62,7 @@ export default function AddRealizationForm(props) {
   const categoryError = validateCategory(inputCategory);
 
   const [sendCategoriesRequest] = useHttp(
-    `${API_CALL_URL_BASE}/posts/categories`
+    `${API_CALL_URL_BASE}api/posts/categories`
   );
 
   function getCategoriesResponseHandler(response) {

@@ -12,7 +12,7 @@ import ContentLoading from "../UI/ContentLoading";
 
 export default function Realizations(props) {
   const [postsData, setPostsData] = useState({});
-  const [fetchProducts, isLoading] = useHttp(`${API_CALL_URL_BASE}/posts`);
+  const [fetchProducts, isLoading] = useHttp(`${API_CALL_URL_BASE}api/posts`);
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
 

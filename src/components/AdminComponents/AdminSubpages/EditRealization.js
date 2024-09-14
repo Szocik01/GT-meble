@@ -29,7 +29,7 @@ export default function EditRealization(){
         return state.loginData.token;
     })
 
-    const [sendEditRequest, isEditRequestLoading] = useHttp(`${API_CALL_URL_BASE}/post/edit`)
+    const [sendEditRequest, isEditRequestLoading] = useHttp(`${API_CALL_URL_BASE}api/post/edit`)
 
     function editResponseHandler(response){
         if(!response.ok){
@@ -79,7 +79,7 @@ export default function EditRealization(){
         })
     }
 
-    const [getInitialData, isInitialDataLoading] = useHttp(`${API_CALL_URL_BASE}/post/${realizationId}`)
+    const [getInitialData, isInitialDataLoading] = useHttp(`${API_CALL_URL_BASE}api/post/${realizationId}`)
 
     function initialDataResponseHandler(response){
         if(!response.ok){

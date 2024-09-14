@@ -10,7 +10,7 @@ import SingleColumn from "../UI/Layouts/SingleColumn";
 
 export default function Prices() {
   const [htmlText, setHtmlText] = useState("");
-  const [sendRequest, isLoading] = useHttp(`${API_CALL_URL_BASE}/service`);
+  const [sendRequest, isLoading] = useHttp(`${API_CALL_URL_BASE}api/service`);
 
   const dispatch = useDispatch();
 
