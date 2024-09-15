@@ -14,8 +14,8 @@ jobs:
           node-version: '20.x'
       - name: Create .env file
         run: |
-          touch .env
-          ${{ secrets.EDITOR_API_KEY }} >> .env
+          touch --version
+          ${{ secrets.EDITOR_API_KEY }} > .env
           ${{ vars.PRODUCTION_BACKEND_URL }} >> .env
           ls -la
           cat .env
