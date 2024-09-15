@@ -1,0 +1,24 @@
+name: Deployment
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js v. 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: Install and build
+        run: ls -la
+        # run: | 
+        #   npm ci
+        #   npm run build --if-present
+      # - name: Upload build
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build
+      #     path: ./build   
