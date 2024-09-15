@@ -15,10 +15,10 @@ jobs:
       - name: Create .env file
         run: |
           touch .env
-          ${{ secrets.editor-api-key }} >> .env
-          # "https://gt-meble.pl" >> .env
-          # ls -la
-          # cat .env
+          ${{ secrets.EDITOR_API_KEY }} >> .env
+          ${{ vars.PRODUCTION_BACKEND_URL }} >> .env
+          ls -la
+          cat .env
       # - name: Install and build
         # run: | 
         #   npm ci
