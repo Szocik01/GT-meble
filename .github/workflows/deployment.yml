@@ -28,6 +28,8 @@ jobs:
         with:
           name: build
           path: ./build   
+      - name: TEst
+        run: ls -la
   deploy:
     runs-on: ubuntu-latest
     needs: build
