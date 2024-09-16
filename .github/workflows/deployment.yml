@@ -41,7 +41,7 @@ jobs:
           server: ${{ vars.SERVER }}
           port: 10215
           ssh_private_key: ${{secrets.SERVER_SSH_PRIVATE_KEY}} 
-          local_path: ./build/
+          local_path: ./build
           remote_path: /var/www/gt-meble/frontend/
           sftp_only: true
           
