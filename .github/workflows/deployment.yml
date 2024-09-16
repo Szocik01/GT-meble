@@ -17,7 +17,6 @@ jobs:
           touch .env
           echo REACT_APP_EDITOR_API_KEY=${{ secrets.EDITOR_API_KEY }} > .env
           echo REACT_APP_API_CALL_URL_BASE=${{ vars.PRODUCTION_BACKEND_URL }} >> .env
-          cat .env
       - name: Install and build
         run: | 
           npm ci
@@ -45,7 +44,6 @@ jobs:
           local_path: ./build/*
           remote_path: /var/www/gt-meble/frontend/
           sftp_only: true
-          delete_remote_files: true
           
           
       
