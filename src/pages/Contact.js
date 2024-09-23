@@ -22,24 +22,19 @@ export default function Contact() {
     <>
       <SingleColumn title={"Skontaktuj się z nami"} marginBottom={true}>
         <div className={style.contactInfoContainer}>
-          <ContactInfo icon={<FacebookIcon fontSize="large" />}>
-            <a className={style.link} href="#">
-              <span className={style.data}>facebook.com/GT-Meble</span>
-            </a>
-          </ContactInfo>
           <ContactInfo icon={<Instagram fontSize="large" />}>
-            <a href="#" className={style.link}>
-              <span className={style.data}>instagram.com/GT-meble</span>
+            <a href="https://www.instagram.com/grzegorz.tetla.meble/" className={style.link}>
+              <span className={style.data}>grzegorz.tetla.meble</span>
             </a>
           </ContactInfo>
           <ContactInfo icon={<LocalPhoneIcon fontSize="large" />}>
-            <span className={style.data}>+48 123456789</span>
+            <span className={style.data}><a href="tel:793687118">+48 793 687 118</a></span>
           </ContactInfo>
           <ContactInfo icon={<EmailIcon fontSize="large" />}>
-            <span className={style.data}> mail</span>
+            <span className={style.data}> <a href="mailto:gteq775@gmail.com">gteq775@gmail.com</a></span>
           </ContactInfo>
           <ContactInfo icon={<PlaceIcon fontSize="large" />}>
-            <span className={style.data}>ul.Kościelecka 2, Pawłowice, 32-480</span>
+            <span className={style.data}>ul. Akacjowa 12, Zebrzydowice, 43-410</span>
           </ContactInfo>
 
         </div>
