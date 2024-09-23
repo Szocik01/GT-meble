@@ -31,10 +31,10 @@ export default function Contact() {
             <span className={style.data}><a href="tel:793687118">+48 793 687 118</a></span>
           </ContactInfo>
           <ContactInfo icon={<EmailIcon fontSize="large" />}>
-            <span className={style.data}> <a href="mailto:gteq775@gmail.com">gteq775@gmail.com</a></span>
+            <span className={style.data}><a href="mailto:gteq775@gmail.com">gteq775@gmail.com</a></span>
           </ContactInfo>
           <ContactInfo icon={<PlaceIcon fontSize="large" />}>
-            <span className={style.data}>ul. Akacjowa 12, Zebrzydowice, 43-410</span>
+            <span className={style.data}>ul. Akacjowa 12, 43-410, Zebrzydowice </span>
           </ContactInfo>
 
         </div>

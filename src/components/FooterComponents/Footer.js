@@ -11,10 +11,10 @@ export default function Footer() {
           <div className={style.footerColumn}>
           <Link to="/"><h2 className={style.logo}>GT Meble</h2></Link>
             <ul className={style.dataList}>
-              <li>ul. Przykładowa 1</li>
-              <li>00-000 Warszawa</li>
-              <li>tel. 123 456 789</li>
-              <li>email: eeeee@oooo.pl</li>
+              <li>ul. Akacjowa 12</li>
+              <li>43-410 Zebrzydowice</li>
+              <li><a href="tel:793687118">tel. +48 793 687 118</a></li>
+              <li>email: <a href="mailto:gteq775@gmail.com">gteq775@gmail.com</a></li>
             </ul>
           </div>
           <div className={style.footerColumn}>

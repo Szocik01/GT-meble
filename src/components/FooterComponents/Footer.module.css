@@ -32,6 +32,14 @@
 .dataList a{
     color: white;
     font-size: 1rem;
+    transform-origin: left;
+    transition: 0.3s color ease-out, 0.3s transform ease-out;
+}
+
+.dataList a:hover,
+.dataList li:hover{
+    color: gainsboro;
+    transform: scale(1.02);
 }
 
 .websiteMap{
