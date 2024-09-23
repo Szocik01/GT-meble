@@ -2,7 +2,7 @@
   --color-primary: #a45d15;
   --color-secondary: #b38664;
   --color-background: #fff1e6;
-  --color-background-secondary: #ffead5;
+  --color-background-secondary: #ffeddb;
   --color-separator: #DFE0DF;
   --color-primary-text: hsl(215, 26%, 26%);
 }
@@ -14,7 +14,7 @@ body {
 }
 
 p{
-  line-height: 160%;
+  line-height: 180%;
 }
 
 
