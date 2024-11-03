@@ -5,6 +5,7 @@
   gap: 0.8rem;
   margin-bottom: 2rem;
   cursor: pointer;
+  width: 100%;
 }
 
 .imageContainer {
