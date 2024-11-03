@@ -36,7 +36,7 @@ export default function ImagesGallery(props) {
                 <div
                   className={style.imagePreview}
                   style={{
-                    backgroundImage: `url("${API_CALL_URL_BASE}/${
+                    backgroundImage: `url("${API_CALL_URL_BASE}${
                       image.path.split(".")[0]
                     }-preview.${image.path.split(".")[1]}")`,
                   }}
@@ -44,7 +44,7 @@ export default function ImagesGallery(props) {
                 <img
                   className={style.image}
                   alt=""
-                  src={`${API_CALL_URL_BASE}/${image.path.split(".")[0]}-sm.${
+                  src={`${API_CALL_URL_BASE}${image.path.split(".")[0]}-sm.${
                     image.path.split(".")[1]
                   }`}
                   onLoad={(event) => {
@@ -60,7 +60,7 @@ export default function ImagesGallery(props) {
         toggler={lightboxState.visible}
         sourceIndex={lightboxState.slideIndex}
         sources={images.map((image) => {
-          return `${API_CALL_URL_BASE}/${image.path}`;
+          return `${API_CALL_URL_BASE}${image.path}`;
         })}
       />
     </>

@@ -63,7 +63,7 @@ export default function RealizationDetail() {
           />
           <img
             className={style.mainImage}
-            src={`${API_CALL_URL_BASE}/${model.postPhotos[0].path}`}
+            src={`${API_CALL_URL_BASE}${model.postPhotos[0].path}`}
             alt=""
           />
           <div

@@ -34,7 +34,7 @@ export default React.memo(function SingleProduct(props) {
           <div
             className={style.imagePreview}
             style={{
-              backgroundImage: `url(${API_CALL_URL_BASE}/${
+              backgroundImage: `url(${API_CALL_URL_BASE}${
                 images[0].path.split(".")[0]
               }-preview.${images[0].path.split(".")[1]})`,
             }}
@@ -42,7 +42,7 @@ export default React.memo(function SingleProduct(props) {
           <img
             key={images[0].id}
             alt={images[0].id}
-            src={`${API_CALL_URL_BASE}/${images[0].path.split(".")[0]}-lg.${
+            src={`${API_CALL_URL_BASE}${images[0].path.split(".")[0]}-lg.${
               images[0].path.split(".")[1]
             }`}
             onLoad={(event)=>{

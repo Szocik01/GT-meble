@@ -207,7 +207,7 @@ export default function AddRealizationForm(props) {
           oldImages.map((image, index) => (
             <ImageWithAdminOptions
               key={`old-${index}`}
-              url={`${API_CALL_URL_BASE}/${image.path}`}
+              url={`${API_CALL_URL_BASE}${image.path}`}
               onDeleteImage={() => {
                 onRemoveOldImages(image, index);
               }}
