@@ -4,7 +4,7 @@
     left: 0;
     bottom: 0;
     z-index: 10;
-    background-color: rgb(109, 67, 8);
+    background-color: var(--color-primary);
     backdrop-filter: blur(7.5px);
     -webkit-backdrop-filter: blur(7.5px);
     height: calc(100vh - 5.5rem);
@@ -21,7 +21,7 @@
 .sidebar.scrolled
 {
     height: calc(100vh - 4.5rem);
-    background-color: rgba(0, 0, 0, 0.925);
+    background-color: var(--color-secondary);
     backdrop-filter: blur(7.5px);
     -webkit-backdrop-filter: blur(7.5px);
 }

@@ -85,6 +85,22 @@
     transform: translateY(-0.8rem) rotate(-45deg);
 }
 
+.navbarSideLeft{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.translateLink{
+  display: flex;
+}
+
+.translateLink img {
+  max-width: 100%;
+  width: 40px;
+}
+
 @media screen and (min-width: 769px) {
   .navbar a:not(.logo),
   .navbar a:hover:not(.logo),

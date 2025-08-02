@@ -24,6 +24,7 @@ export default function Footer() {
               <Link to="/realizations">Realizacje</Link>
               <Link to="/services">O usługach</Link>
               <Link to="/contact">Kontakt</Link>
+              <Link to="/login">Zaloguj</Link>
             </div>
           </div>
         </SingleColumn>
