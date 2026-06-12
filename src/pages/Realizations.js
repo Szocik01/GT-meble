@@ -89,6 +89,7 @@ export default function Realizations(props) {
         title={"Poznaj nasze realizacje"}
         sideElement={
           <Filters
+            showHeader={true}
             categories={postsData.postsCategories}
             onInputChangeHandler={onFilterInputChangeHandler}
             values={filterValuesObject}

@@ -3,7 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -16,15 +15,12 @@ body {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background: url("./images/MainPageSlider/wave.png"),
+  background:
     linear-gradient(
       180deg,
-      var(--color-background-secondary) 50%,
-      var(--color-background) 50%
+      var(--color-background) 0%,
+      var(--color-background-secondary) 100%
     );
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-y: 50%;
 }
 
 img {

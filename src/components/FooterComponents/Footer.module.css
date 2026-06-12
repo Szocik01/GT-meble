@@ -19,7 +19,7 @@
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 1.5rem;
-    font-family: "Inter", "Roboto", sans-serif;
+    font-family: "Gelasio", serif;
 }
 
 .dataList{
@@ -38,11 +38,12 @@
 
 .dataList a:hover,
 .dataList li:hover{
-    color: gainsboro;
+    color: rgb(223, 223, 223);
     transform: scale(1.02);
 }
 
 .websiteMap{
+    font-family: "Gelasio", serif;
     color: white;
     font-size: 1.5rem;
     font-weight: 400;

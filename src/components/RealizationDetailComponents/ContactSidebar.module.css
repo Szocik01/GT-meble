@@ -1,0 +1,27 @@
+.sidebarContainer {
+  background-color: var(--color-card-background);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(196, 196, 196, 0.2);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(196, 196, 196, 0.2);
+  box-shadow: 0px 0px 6px 1px rgba(196, 196, 196, 0.2);
+}
+
+.sidebarTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: "Gelasio", serif;
+  color: var(--color-primary-text);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+@media screen and (max-width: 991px) and (min-width:769px) {
+  .sidebarContainer {
+    padding: 12px;
+  } 
+}

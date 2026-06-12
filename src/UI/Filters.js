@@ -18,13 +18,9 @@ export default function Filters(props) {
   }
 
   return (
-    <>
-      {showHeader && (
-        <div className={style.header}>
-          <FilterAlt /> Filtry
-        </div>
-      )}
-      <div className={`${style.container} ${style.margin}`}>
+    <div className={style.filtersPanel}>
+      {showHeader && <div className={style.header}>Filtruj realizacje</div>}
+      <div className={`${style.container}`}>
         <TextField
           variant="outlined"
           fullWidth={true}
@@ -32,6 +28,9 @@ export default function Filters(props) {
           label="Nazwa"
           sx={{
             backgroundColor: "white",
+            ".MuiInputBase-root": {
+              borderRadius: "10px",
+            },
             ".MuiOutlinedInput-notchedOutline": {
               borderColor: "rgb(0 0 0 / 15%)",
             },
@@ -54,6 +53,7 @@ export default function Filters(props) {
             }}
             value={values.category}
             sx={{
+              borderRadius: "10px",
               backgroundColor: "white",
               ".MuiOutlinedInput-notchedOutline": {
                 borderColor: "rgb(0 0 0 / 15%)",
@@ -75,6 +75,6 @@ export default function Filters(props) {
           </Select>
         </FormControl>
       </div>
-    </>
+    </div>
   );
 }

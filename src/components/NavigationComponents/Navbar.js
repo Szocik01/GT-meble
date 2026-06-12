@@ -79,7 +79,7 @@ export default React.memo(function Navbar(props) {
         onClick={unfoldingHandler}
       ></div>
       <Link to="" className={style.logo}>
-        GT Meble
+        Tetla Meble
       </Link>
       <div className={style.navbarSideLeft}>
         <div

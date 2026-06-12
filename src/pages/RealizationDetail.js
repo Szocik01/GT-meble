@@ -10,12 +10,15 @@ import { useDispatch } from "react-redux";
 import { popUpInfoActions, positionActions } from "../storage/redux";
 import ImagesGallery from "../components/RealizationDetailComponents/ImagesGallery";
 import DetailHeader from "../components/RealizationDetailComponents/DetailHeader";
+import TwoColumns from "../UI/Layouts/TwoColumns";
+import ContactSidebar from "../components/RealizationDetailComponents/ContactSidebar";
 
 export default function RealizationDetail() {
   const [model, setModel] = useState(null);
   const { realizationId } = useParams();
   const [fetchRealizationData, isLoading] = useHttp(
-    `${API_CALL_URL_BASE}api/post/${realizationId}`, true
+    `${API_CALL_URL_BASE}api/post/${realizationId}`,
+    true,
   );
   const dispatch = useDispatch();
 
@@ -35,10 +38,10 @@ export default function RealizationDetail() {
           isError: true,
           message: error.message,
           isVisible: true,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {
@@ -56,23 +59,35 @@ export default function RealizationDetail() {
       ) : model == null ? (
         <NoData>Nie znaleziono realizacji</NoData>
       ) : (
-        <SingleColumn htmlOptions={{ style: { backgroundColor: "white", padding: "0 2rem" } }}>
-          <DetailHeader
-            title={model.postContent.title}
-            subtitle={model.postContent.category}
-          />
-          <img
-            className={style.mainImage}
-            src={`${API_CALL_URL_BASE}${model.postPhotos[0].path}`}
-            alt=""
-          />
-          <div
-            className={style.description}
-            dangerouslySetInnerHTML={{ __html: model.postContent.description }}
-          ></div>
+        <>
+          <SingleColumn
+            withoutMinHeight={true}
+            htmlOptions={{ style: {padding: "0px 2rem"} }}
+          >
+            <DetailHeader
+              title={model.postContent.title}
+              subtitle={model.postContent.category}
+            />
+          </SingleColumn>
+          <TwoColumns
+            sideElement={<ContactSidebar />}
+            htmlOptions={{ style: { padding: "0 2rem" } }}
+          >
+            <img
+              className={style.mainImage}
+              src={`${API_CALL_URL_BASE}${model.postPhotos[0].path}`}
+              alt=""
+            />
+            <div
+              className={style.description}
+              dangerouslySetInnerHTML={{
+                __html: model.postContent.description,
+              }}
+            ></div>
 
-          <ImagesGallery images={model.postPhotos} />
-        </SingleColumn>
+            <ImagesGallery images={model.postPhotos} />
+          </TwoColumns>
+        </>
       )}
     </>
   );

@@ -1,11 +1,3 @@
-.header{
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    width: 100%;
-    font-size: 2rem;
-    text-transform: uppercase;
-}
-
 .mainImage{
     width: 100%;
     aspect-ratio: 4/3;
@@ -13,15 +5,16 @@
     -o-object-fit: cover;
     object-position: center;
     -o-object-position: center;
-    background-color: #f0f5f8;
+    background-color: var(--color-card-background);
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .description{
-    margin: 3rem 0;
+    margin: 2.5rem 0;
     width: 100%;
-    text-align: justify;
+    text-align: left;
+    color: var(--color-primary-text);
 }
 
 .subtitle{

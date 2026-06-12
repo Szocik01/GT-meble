@@ -48,7 +48,7 @@ export default function Main() {
         </SwiperSlide>
       </Swiper>
       <span className={style.logo}>
-        GT MEBLE
+        TETLA MEBLE
       </span>
       <div className={style.linkContainer}>
         <MainLink url="/realizations">

@@ -1,53 +1,84 @@
 .cardContainer {
   width: 100%;
   position: relative;
-  transition:transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
   cursor: pointer;
 }
 
-.cardContainer:not(.disableScaling):hover{
+.cardContainer:not(.disableScaling):hover {
   transform: scale(1.01);
 }
 
-.card{
+.card {
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-  background-color: white;
+  gap: 0.25rem;
+  background-color: var(--color-card-background);
+
   position: relative;
 }
 
-.cardContainer::before{
+.cardContainer::before {
   content: "";
   border-radius: 15px;
   position: absolute;
   inset: 0;
-  opacity: 0.3;
-  -webkit-box-shadow: 0px 0px 8px 1px rgb(161, 161, 161);
-  -moz-box-shadow: 0px 0px 8px 1px rgb(161, 161, 161);
-  box-shadow: 0px 0px 8px 1px rgb(161, 161, 161);
+  opacity: 0.2;
+  -webkit-box-shadow: 0px 0px 6px 1px rgb(161, 161, 161);
+  -moz-box-shadow: 0px 0px 6px 1px rgb(161, 161, 161);
+  box-shadow: 0px 0px 6px 1px rgb(161, 161, 161);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.cardContainer:hover::before{
+.cardContainer:hover::before {
   opacity: 0.7;
 }
 
-.link{
+.link {
   position: absolute;
   inset: 0;
+  z-index: 30;
 }
 
 .imageContainer {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 3/2;
   overflow: hidden;
   flex-shrink: 0;
   position: relative;
+}
+
+.imageContainer::before {
+  content: "";
+  width: 100%;
+  opacity: 0;
+  background: linear-gradient(180deg, #00000000 0%, #00000066 100%);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 45%;
+  z-index: 10;
+  transition: opacity 0.3s ease-out;
+}
+
+.imageContainer .seeMore {
+  padding: 0.25rem 0.5rem;
+  border-radius: 30px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 20;
+  left: 1rem;
+  bottom: 1rem;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  font-weight: 500;
 }
 
 .imageContainer img {
@@ -58,11 +89,24 @@
   object-position: center;
   z-index: 1;
   display: flex;
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   opacity: 0;
 }
 
-.imagePreview{
+.card:hover .imageContainer .seeMore {
+  opacity: 1;
+  transform: none;
+}
+
+.card:hover .imageContainer img {
+  transform: scale(1.05);
+}
+
+.card:hover .imageContainer::before {
+  opacity: 1;
+}
+
+.imagePreview {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -92,24 +136,22 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: "Gelasio", sans-serif;
 }
 
 .category {
-  font-weight: 500;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 12px;
+  width: fit-content;
+ padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  background-color: var(--color-background-params);
+  color: var(--color-primary-text);
 }
 
-.category,
 .text {
   font-size: 0.9rem;
-  color: rgb(88, 88, 88);
-}
-
-.text{
+  color: var(--color-primary-text);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -119,33 +161,32 @@
 
 @media screen and (min-width: 576px) {
   .card {
-    flex-direction: row;
-    gap: 0.8rem;
-  }
-
-  .body{
-    min-height: auto;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .imageContainer {
-    width: 30%;
-    max-width: 180px;
-  }
-  
-  .itemsHeader.padding{
-    padding-right: 4.5rem;
+    width: 100%;
   }
 }
 
-@media screen and (min-width:992px){
-  
-  .itemsHeader{
+@media screen and (min-width: 992px) {
+  .cardContainer {
+    width: calc(50% - (1rem / 2));
+  }
+
+  .itemsHeader {
     font-size: 1.5rem;
   }
 
   .body {
     gap: 0.5rem;
-    padding: 0.8rem;
+    padding: 0.8rem 1rem;
   }
-  
+}
+
+@media screen and (min-width: 1200px) {
+  .cardContainer {
+    width: calc(33.333% - (1rem * (2/3)));
+  }
 }

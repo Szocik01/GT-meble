@@ -23,7 +23,9 @@
   font-size: 4.5rem;
   font-weight: 500;
   width: 100%;
-  font-family: "Inter", "Roboto", sans-serif;
+   font-family: "Gelasio", serif;
+   text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+   animation: fadeIn 0.75s ease-out 0s 1 normal forwards;
 }
 
 .linkContainer {
@@ -47,5 +49,18 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
+  }
+
+  .logo {
+    font-size: 5.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

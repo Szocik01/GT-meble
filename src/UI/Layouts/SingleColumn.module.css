@@ -26,11 +26,10 @@
     width: 100%;
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: 4rem;
     margin-top: 3rem;
     padding: 0 1rem 2rem; 
-    text-transform: uppercase;
-    border-bottom: 2px solid var(--color-separator);
+    font-family: "Gelasio", serif;
     position: relative;
     color: var(--color-primary-text);
 }
@@ -39,11 +38,12 @@
 {
     content: "";
     position: absolute;
-    bottom: -1.2rem;
+    bottom: -1rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
-    height: 2px;
+    width: 10rem;
+    height: 4px;
+    border-radius: 10px;
     background-color: var(--color-separator);
     z-index: 1;
 }
@@ -67,7 +67,7 @@
 
     .header
     {
-        font-size: 2.4rem;
+        font-size: 3rem;
     }
 }
 

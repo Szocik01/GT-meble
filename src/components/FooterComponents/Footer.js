@@ -9,7 +9,7 @@ export default function Footer() {
       <footer className={style.footer}>
         <SingleColumn htmlOptions={{ style: { paddingBottom: "0px" } }} withoutMinHeight={true}>
           <div className={style.footerColumn}>
-          <Link to="/"><h2 className={style.logo}>GT Meble</h2></Link>
+          <Link to="/"><h2 className={style.logo}>Tetla Meble</h2></Link>
             <ul className={style.dataList}>
               <li>ul. Akacjowa 12</li>
               <li>43-410 Zebrzydowice</li>

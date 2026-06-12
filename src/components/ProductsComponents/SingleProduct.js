@@ -31,6 +31,7 @@ export default React.memo(function SingleProduct(props) {
         )}
         <Link to={`/realization/${id}`} className={style.link}></Link>
         <div className={style.imageContainer}>
+          <div className={style.seeMore}>Zobacz więcej</div>
           <div
             className={style.imagePreview}
             style={{
@@ -51,8 +52,8 @@ export default React.memo(function SingleProduct(props) {
           />
         </div>
         <div className={style.body}>
+          <span className={style.category}>{category}</span>
           <h3 className={`${style.itemsHeader} ${style.padding}`}>{title}</h3>
-          <span className={style.category}>Kategoria: {category}</span>
           <span
             className={style.text}
             dangerouslySetInnerHTML={{ __html: description }}
