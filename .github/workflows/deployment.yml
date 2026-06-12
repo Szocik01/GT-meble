@@ -42,7 +42,7 @@ jobs:
           port: 10215
           ssh_private_key: ${{secrets.SERVER_SSH_PRIVATE_KEY}} 
           local_path: ./
-          remote_path: /var/www/gt-meble/frontend/
+          remote_path: /var/www/tetla-meble/frontend/
           sftp_only: true
           
           
